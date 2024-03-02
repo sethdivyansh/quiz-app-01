@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      .btn-primary {
+        @apply p-2.5 bg-[#eff8ff] w-[100%] text-left border border-blue-400 rounded-md text-neutral-600 font-semibold hover:bg-[#c4dfff] hover:border-[#c4dfff];
+      }
+    </style>
+  </head>
+  <body class="bg-[#027bff] w-[100vw] h-[100vh]">
+    <div class="flex w-[100vw] h-[100vh] justify-center items-center">
+      <div class="bg-white w-[40vw] h-[60vh] rounded-md shadow-xl">
+        <div class="pl-8 pt-4 font-bold text-xl border-b-2 shadow-md">
+          <nav>
+            <div class="mb-5 flex flex-row justify-between w-[93%]">
+              <div>Awesome Quiz Application</div>
+              <div class="score text-neutral-600"></div>
+            </div>
+          </nav>
+        </div>
+        <div class="main pl-8 pt-4 h-[75%] border-b-2">
+          <label class="question font-bold text-2xl pb-5 mb-5"></label>
+          <div
+            class="options flex flex-col items-start mt-5 justify-around h-[70%] w-[95%]"
+          >
+            <button class="option opt1 btn-primary"></button>
+            <button class="option opt2 btn-primary"></button>
+            <button class="option opt3 btn-primary"></button>
+            <button class="option opt4 btn-primary"></button>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between pl-5 pr-5 mt-3 text-neutral-600"
+        >
+          <div>
+            <p class="ques_no"></p>
+          </div>
+          <div>
+            <button
+              class="next_btn bg-[#027bff] text-white pr-3 pl-2.5 pt-1.5 pb-1.5 mr-1.5 rounded-md hover:bg-[#027cfff3]"
+            >
+              Next Ques
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../static/script.js"></script>
+  </body>
+</html>
