@@ -85,19 +85,22 @@ const backToStartStyle = () => {
 };
 
 const quizOver = () => {
-  checkAns();
   updateScore();
+  document.querySelector(".next_btn").innerText = "Quiz Over";
+  document.querySelector(".next_btn").style.backgroundColor = "blue";
   main_body = document.querySelector(".main");
   main_body.innerHTML = "";
   main_body.innerText = `Your Score: ${score}`;
+  ques_num++;
 };
 
 next_btn.addEventListener("click", () => {
   if (ques_num === noOfQues - 1) {
+    checkAns();
     setTimeout(() => {
       quizOver();
     }, 1500);
-  } else if (selected_opt) {
+  } else if (selected_opt && ques_num < noOfQues - 1) {
     checkAns();
     setTimeout(() => {
       ques_num++;
