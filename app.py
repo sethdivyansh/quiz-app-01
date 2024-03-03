@@ -17,10 +17,9 @@ except mysql.connector.Error as err:
     def error():
         return render_template('error.html')
 else:
-  cursor = con.cursor()
+  cur = con.cursor()
 
 
-cur = con.cursor()
 cur.execute("select count(*) from questions")
 
 no_of_rows = cur.fetchone()
