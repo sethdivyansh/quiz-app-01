@@ -24,7 +24,7 @@ cur = con.cursor()
 cur.execute("select count(*) from questions")
 
 no_of_rows = cur.fetchone()
-question = []
+
 
 @app.route('/')
 def index():
@@ -35,7 +35,7 @@ def get_quesion():
 
     cur.execute("select * from questions")
     ques_data = cur.fetchall()
-
+    question = []
     for data in ques_data:
         question.extend([data])
 
