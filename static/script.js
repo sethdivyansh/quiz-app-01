@@ -95,10 +95,12 @@ const quizOver = () => {
 };
 
 next_btn.addEventListener("click", () => {
+  if(selected_opt) next_btn.disabled = true;
   if (ques_num === noOfQues - 1) {
     checkAns();
     setTimeout(() => {
       quizOver();
+      next_btn.disabled = true;
     }, 1500);
   } else if (selected_opt && ques_num < noOfQues - 1) {
     checkAns();
@@ -107,7 +109,7 @@ next_btn.addEventListener("click", () => {
       backToStartStyle();
       updateScore();
       updateQuesNo();
-
+      next_btn.disabled = false;
       renderQuiz(ques_data);
     }, 1500);
   }
